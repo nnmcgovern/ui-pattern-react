@@ -30,6 +30,7 @@ header {
 
 .randomize {
   align-self: center;
+  cursor: pointer;
 }
 
 main {
@@ -52,6 +53,7 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .modal {

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import { getMedia } from "../services/apiGet.js"
 
 export default function Main() {
-  // const [images, setImages] = useState([])
   const [row1, setRow1] = useState([])
   const [row2, setRow2] = useState([])
 
