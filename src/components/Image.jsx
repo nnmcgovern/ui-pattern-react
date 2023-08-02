@@ -16,13 +16,11 @@ export default function Image({ img }) {
     }
   }
 
-  console.log("img: ", img)
-
   return (
     <>
       <div className="img" style={style} onClick={toggleModal} ></div>
 
-      {showModal ? <Modal img={img} /> : <></>}
+      {showModal ? <Modal img={img} setShowModal={setShowModal} /> : <></>}
     </>
   )
 }
