@@ -1,40 +1,46 @@
 import Image from "./Image.jsx"
 import { useState, useEffect } from "react"
-import { getImages } from "../services/apiGet.js"
+import { getMedia } from "../services/apiGet.js"
 
 export default function Main() {
-  const [images, setImages] = useState([])
+  // const [images, setImages] = useState([])
+  const [row1, setRow1] = useState([])
+  const [row2, setRow2] = useState([])
 
   useEffect(() => {
     fetchImages()
   }, [])
 
   async function fetchImages() {
-    const images = await getImages()
-    console.log(images)
+    const media = await getMedia()
+    const images = []
+    let i = 0
+
+    // use first 10 with media_type === image
+    while (images.length < 10 && i < 20) {
+      if (media[i]["media_type"] === "image") {
+        images.push(media[i])
+      }
+      i++
+    }
+    // && i < 20 in case there are less than 10 images in media,
+    // to prevent infinite loop
+
+    setRow1(images.slice(0, 5))
+    setRow2(images.slice(5))
   }
 
   return (
     <main>
       <div className='row'>
-        {/* <Image />
-        <Image />
-        <Image />
-        <Image />
-        <Image /> */}
-
-
-
+        {row1.map(img => (
+          <Image img={img} key={img.date} />
+        ))}
       </div>
       <div className='row'>
-        {/* <Image />
-        <Image />
-        <Image />
-        <Image />
-        <Image /> */}
-
-
-
+        {row2.map(img => (
+          <Image img={img} key={img.date} />
+        ))}
       </div>
     </main>
   )
