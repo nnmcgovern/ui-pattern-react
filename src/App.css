@@ -1,0 +1,186 @@
+.App {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 100%;
+  margin: 0;
+  background-color: #000000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Russo One";
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 30px;
+  color: #FFFFFF;
+  grid-area: 1;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title img {
+  height: 60px;
+}
+
+.randomize {
+  align-self: center;
+}
+
+main {
+  grid-area: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.img {
+  width: 19%;
+  padding-top: 19%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal {
+  z-index: 1;
+  position: absolute;
+  height: 500px;
+  width: 1000px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -500px;
+  display: flex;
+  background-color: #000000;
+  border: solid #FFFFFF;
+  box-shadow: 0 0 100px 50px #000000;
+}
+
+.close {
+  z-index: 2;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.img-modal {
+  width: 50%;
+  padding-top: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.desc {
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+}
+
+.desc * {
+  color: #FFFFFF;
+  font-family: Helvetica;
+}
+
+.desc-date {
+  font-weight: bold;
+}
+
+.desc-text {
+  overflow: scroll;
+  height: 65%;
+  line-height: 1.3em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .img {
+    width: 32%;
+    padding-top: 32%;
+  }
+
+  .title h1 {
+    font-size: 25px;
+  }
+
+  .title img {
+    height: 50px;
+  }
+
+  .modal {
+    width: 700px;
+    height: 800px;
+    margin-top: -200px;
+    margin-left: -350px;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .img {
+    width: 49%;
+    padding-top: 49%;
+  }
+
+  .title h1 {
+    font-size: 25px;
+  }
+
+  .title img {
+    height: 55px;
+  }
+
+  .modal {
+    width: 500px;
+    height: 1000px;
+    margin-top: -150px;
+    margin-left: -250px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .img-modal {
+    width: 99%;
+    padding-top: 99%;
+    margin-top: 5px;
+  }
+
+  .desc {
+    width: fit-content;
+    justify-content: flex-start;
+  }
+
+  .desc * {
+    margin: 3px 0 3px 0;
+    height: fit-content;
+  }
+
+  .desc-text {
+    height: 55%;
+    font-size: 1.2em;
+  }
+}
