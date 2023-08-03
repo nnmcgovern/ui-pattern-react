@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <Header setReload={setReload} />
       <Routes>
-        <Route path="/" element={<Main row1={row1} row2={row2} setImagesClicked={setImagesClicked} />} />
+        <Route path="/" element={<Main row1={row1} row2={row2} imagesClicked={imagesClicked} setImagesClicked={setImagesClicked} />} />
         <Route path="/recent" element={<Recent imagesClicked={imagesClicked} />} />
       </Routes>
     </div>

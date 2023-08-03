@@ -1,7 +1,7 @@
 import Modal from "./Modal.jsx"
 import { useState } from "react"
 
-export default function Image({ img, setImagesClicked }) {
+export default function Image({ img, imagesClicked, setImagesClicked }) {
   const [showModal, setShowModal] = useState(false)
   const style = {
     backgroundImage: `url(${img.hdurl})`
@@ -10,8 +10,35 @@ export default function Image({ img, setImagesClicked }) {
   const handleClick = e => {
     setShowModal(true)
 
+    // will execute only if setImagesClicked has been defined
+    // (i.e. will not execute when clicking on image within Recently Viewed)
     if (setImagesClicked) {
-      setImagesClicked(prev => [img, ...prev])
+
+      // if clicked image has been added to imagesClicked before
+      if (imagesClicked.includes(img)) {
+
+        // setImagesClicked(prev => [img, ...prev])
+        setImagesClicked(prev => {
+          const newArr = []
+
+          // find index of duplicate
+          const indexDup = prev.findIndex(imgPrev => imgPrev.date === img.date)
+
+          prev.forEach((imgPrev, i) => {
+            if (i !== indexDup) {
+              newArr.push(imgPrev)
+            }
+          })
+
+          // push most recently clicked image
+          newArr.unshift(img)
+
+          return newArr
+        })
+      }
+      else {
+        setImagesClicked(prev => [img, ...prev])
+      }
     }
   }
 
