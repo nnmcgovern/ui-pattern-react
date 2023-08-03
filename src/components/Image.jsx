@@ -8,12 +8,7 @@ export default function Image({ img }) {
   }
 
   const toggleModal = e => {
-    if (showModal) {
-      setShowModal(false)
-    }
-    else {
-      setShowModal(true)
-    }
+    setShowModal(true)
   }
 
   return (

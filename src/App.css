@@ -28,7 +28,9 @@ header {
   height: 60px;
 }
 
-.randomize {
+.randomize,
+.home,
+.recent {
   align-self: center;
   cursor: pointer;
 }
