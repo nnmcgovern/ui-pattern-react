@@ -1,6 +1,5 @@
 import closeImg from "../img/close-x-gray.png"
 import closeImgHover from "../img/close-x-white.png"
-import { useState } from "react"
 
 export default function Modal({ img, setShowModal }) {
   const style = {

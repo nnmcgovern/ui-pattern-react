@@ -111,10 +111,6 @@ main {
   line-height: 1.3em;
 }
 
-.hidden {
-  display: none !important;
-}
-
 @media screen and (max-width: 768px) {
   .img {
     width: 32%;
