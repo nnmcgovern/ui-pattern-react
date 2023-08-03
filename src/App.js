@@ -10,6 +10,7 @@ function App() {
   const [reload, setReload] = useState(false)
   const [row1, setRow1] = useState([])
   const [row2, setRow2] = useState([])
+  const [imagesClicked, setImagesClicked] = useState([])
 
   useEffect(() => {
     fetchImages()
@@ -38,8 +39,8 @@ function App() {
     <div className="App">
       <Header setReload={setReload} />
       <Routes>
-        <Route path="/" element={<Main row1={row1} row2={row2} />} />
-        <Route path="/recent" element={<Recent />} />
+        <Route path="/" element={<Main row1={row1} row2={row2} setImagesClicked={setImagesClicked} />} />
+        <Route path="/recent" element={<Recent imagesClicked={imagesClicked} />} />
       </Routes>
     </div>
   )
