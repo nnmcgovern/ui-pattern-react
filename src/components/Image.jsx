@@ -16,8 +16,6 @@ export default function Image({ img, imagesClicked, setImagesClicked }) {
 
       // if clicked image has been added to imagesClicked before
       if (imagesClicked.includes(img)) {
-
-        // setImagesClicked(prev => [img, ...prev])
         setImagesClicked(prev => {
           const newArr = []
 
