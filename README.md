@@ -1,6 +1,8 @@
 # ui-pattern-react
 
-This site created with React is an updated version of [an old project built with vanilla JavaScript](https://github.com/nnmcgovern/ui-pattern). It uses data from NASA's [Astronomy Picture of the Day (APOD) API](https://api.nasa.gov/). This project maintains the features of the older version with some additions.
+[Click here to go to deployed site](https://apod-pictures.netlify.app/)
+<br /><br />
+This website created with React is an updated version of [an old project built with vanilla JavaScript](https://github.com/nnmcgovern/ui-pattern). It uses data from NASA's [Astronomy Picture of the Day (APOD) API](https://api.nasa.gov/). This project maintains the features of the older version with some additions.
 
 ## Home
 <img width="720" alt="home" src="https://github.com/nnmcgovern/ui-pattern-react/assets/48661257/71ab19d3-cbc9-4013-ab5d-82cc35fee0a3">
